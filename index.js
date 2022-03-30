@@ -2,8 +2,6 @@ import React from 'react';
 import { render } from 'react-dom';
 import { useState } from 'react';
 
-// END STATE
-
 function App() {
   const [movies, setMovies] = useState([
     {
@@ -27,11 +25,13 @@ function App() {
     },
   ]);
 
+  //find movie by id using filter
   function findMovie(id) {
     let movie = movies.filter((movie) => movie.id === id);
     return movie;
   }
 
+  //populates using movie(ID) data, pulls from json array
   function Section({ id }) {
     var movie = findMovie(id);
     //console.log(movie[0].name)
