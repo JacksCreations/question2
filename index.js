@@ -29,18 +29,17 @@ function App() {
 
   function findMovie(id) {
     let movie = movies.filter((movie) => movie.id === id);
-    console.log(movie);
     return movie;
   }
 
-  function Section({ movies, id }) {
+  function Section({ id }) {
     var movie = findMovie(id);
-    console.log(movie);
+    //console.log(movie[0].name)
     return (
       <div>
-        <h2>{movie.name}</h2>
-        <p style={{ fontSize: '12px', lineHeight: '16px' }}>{movie.desc}</p>
-        <a target="_blank" href={movie.url}>
+        <h2>{movie[0].name}</h2>
+        <p style={{ fontSize: '14px', lineHeight: '16px' }}>{movie[0].desc}</p>
+        <a target="_blank" href={movie[0].url}>
           Visit movie link
         </a>
         <hr />
@@ -50,13 +49,9 @@ function App() {
 
   return (
     <>
-      <Section movies={(movies, 'fant011')} />
-      <Section movies={(movies, 'fant012')} />
-      <Section
-        name="The Return of the King "
-        desc="Gandalf and Aragorn lead the World of Men against Sauron's army to draw his gaze from Frodo and Sam as they approach Mount Doom with the One Ring."
-        url="https://www.imdb.com/title/tt0167260/?ref_=nv_sr_1?ref_=nv_sr_1"
-      />
+      <Section id={'fant011'} />
+      <Section id={'fant012'} />
+      <Section id={'fant013'} />
     </>
   );
 }
